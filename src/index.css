@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Mobile-first responsive design */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Mobile container - centers the app like a phone */
+#root {
+  max-width: 428px; /* iPhone width */
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* For larger screens, center the phone mockup */
+@media (min-width: 429px) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  
+  #root {
+    height: 90vh;
+    max-height: 800px;
+    border-radius: 32px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  
+  /* Hide scrollbar for cleaner look */
+  #root::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  #root::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  #root::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+  }
+}
+
+/* Mobile touch optimizations */
+button, 
+[onClick] {
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Better spacing for mobile */
+.container {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* Ensure text is readable on mobile */
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+p, span, button, input {
+  font-size: 16px; /* Prevents zoom on focus in iOS */
+}
