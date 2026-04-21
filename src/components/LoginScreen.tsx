@@ -35,6 +35,12 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ onLogin, onSignUp, onLoginWit
               placeholder="email@example.com"
             />
           </div>
+          // Add after the password field
+<div className="text-right mb-4">
+  <button onClick={() => setCurrentScreen('forgotPassword')} className="text-sm text-green-600">
+    Forgot Password?
+  </button>
+</div>
           <button
             type="submit"
             className="w-full bg-green-600 text-white font-medium py-3 rounded-xl hover:bg-green-700 transition-all text-sm"
